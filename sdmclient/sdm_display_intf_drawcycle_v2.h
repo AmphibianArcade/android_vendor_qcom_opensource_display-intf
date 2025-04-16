@@ -19,6 +19,9 @@ public:
                   shared_ptr<Fence> acquire_fence, int32_t dataspace,
                   const SDMRegion &damage, uint32_t version,
                   float hdr_sdr_ratio) = 0;
+  virtual DisplayError GetDisplayLuts(
+      uint64_t display,
+      std::unique_ptr<std::vector<std::pair<LayerId, Lut3d *>>> &out_luts) = 0;
 };
 
 } // namespace sdm
