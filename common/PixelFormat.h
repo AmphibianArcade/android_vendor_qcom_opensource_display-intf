@@ -26,8 +26,8 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * Changes from Qualcomm Innovation Center are provided under the following license:
- * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * ​​​​​Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
@@ -371,6 +371,9 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat : uint32_t {
   TP10_UBWC_MIPMAP = 0x225,
   P010_MIPMAP = 0x226,
 
+  YCBCR_P010_HEIF = 0x151, // YCBCR_P010_512
+  YCBCR_P010_1024 = 0x152,
+  NV12_1024 = 0x153,
   /* --------------------------------------------------------------------------------*/
 
 } vendor_qti_hardware_display_common_PixelFormat;
