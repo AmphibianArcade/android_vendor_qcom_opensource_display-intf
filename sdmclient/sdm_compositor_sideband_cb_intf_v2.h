@@ -16,7 +16,8 @@ public:
 
   // gpu display correction
   virtual int DisplayCorrectionBlit(uint64_t display, const void *dst,
-                                    const void *src, int32_t src_fence_fd) = 0;
+                                    const void *src, int32_t src_fence_fd,
+                                    int32_t flip_X, int32_t flip_Y) = 0;
   virtual int InitDisplayCorrection(uint64_t display,
                                     uint64_t display_correction_config_type,
                                     bool is_secure) = 0;
