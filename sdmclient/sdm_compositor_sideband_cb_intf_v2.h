@@ -8,20 +8,25 @@
 
 #include "sdm_compositor_sideband_cb_intf.h"
 
+#include <DisplayCorrectionTypeConfig.h>
+
 namespace sdm {
+
+using DisplayCorrectionTypeConfig =
+    vendor_qti_hardware_display_common_DisplayCorrectionTypeConfig;
 
 class SDMSideBandCompositorCbIntfV2 : public SDMSideBandCompositorCbIntf {
 public:
   virtual ~SDMSideBandCompositorCbIntfV2() {}
 
   // gpu display correction
-  virtual int DisplayCorrectionBlit(uint64_t display, const void *dst,
-                                    const void *src, int32_t src_fence_fd,
-                                    int32_t flip_X, int32_t flip_Y,
-                                    uint64_t &time_elapsed) = 0;
-  virtual int InitDisplayCorrection(uint64_t display,
-                                    uint64_t display_correction_config_type,
-                                    bool is_secure) = 0;
+  virtual int DisplayCorrectionBlit(
+      uint64_t display, const void *dst, const void *src, int32_t src_fence_fd,
+      DisplayCorrectionTypeConfig display_correction_type_config,
+      uint64_t &time_elapsed) = 0;
+  virtual int InitDisplayCorrection(
+      uint64_t display, bool is_secure,
+      DisplayCorrectionTypeConfig display_correction_type_config) = 0;
   virtual void DestroyDisplayCorrection(uint64_t display) = 0;
 };
 
