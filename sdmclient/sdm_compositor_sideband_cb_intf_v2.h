@@ -20,10 +20,9 @@ public:
   virtual ~SDMSideBandCompositorCbIntfV2() {}
 
   // gpu display correction
-  virtual int DisplayCorrectionBlit(
-      uint64_t display, const void *dst, const void *src, int32_t src_fence_fd,
-      DisplayCorrectionTypeConfig display_correction_type_config,
-      uint64_t &time_elapsed) = 0;
+  virtual int DisplayCorrectionBlit(uint64_t display, const void *dst,
+                                    const void *src, int32_t src_fence_fd,
+                                    uint64_t &time_elapsed) = 0;
   virtual int InitDisplayCorrection(
       uint64_t display, bool is_secure,
       DisplayCorrectionTypeConfig display_correction_type_config) = 0;
