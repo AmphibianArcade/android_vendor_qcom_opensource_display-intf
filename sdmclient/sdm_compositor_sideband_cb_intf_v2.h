@@ -8,12 +8,15 @@
 
 #include "sdm_compositor_sideband_cb_intf.h"
 
-#include <DisplayCorrectionTypeConfig.h>
+#include <CorrectionTypeEnableFlags.h>
+#include <DisplayCorrectionConfig.h>
 
 namespace sdm {
 
-using DisplayCorrectionTypeConfig =
-    vendor_qti_hardware_display_common_DisplayCorrectionTypeConfig;
+using DisplayCorrectionConfig =
+    vendor_qti_hardware_display_common_DisplayCorrectionConfig;
+using CorrectionTypeEnableFlags =
+    vendor_qti_hardware_display_common_CorrectionTypeEnableFlags;
 
 class SDMSideBandCompositorCbIntfV2 : public SDMSideBandCompositorCbIntf {
 public:
@@ -25,7 +28,8 @@ public:
                                     uint64_t &time_elapsed) = 0;
   virtual int InitDisplayCorrection(
       uint64_t display, bool is_secure,
-      DisplayCorrectionTypeConfig display_correction_type_config) = 0;
+      DisplayCorrectionConfig display_correction_config,
+      CorrectionTypeEnableFlags supported_correction_type) = 0;
   virtual void DestroyDisplayCorrection(uint64_t display) = 0;
 };
 
