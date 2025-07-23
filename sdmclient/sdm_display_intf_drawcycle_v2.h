@@ -22,6 +22,9 @@ public:
   virtual DisplayError GetDisplayLuts(
       uint64_t display,
       std::unique_ptr<std::vector<std::pair<LayerId, Lut3d *>>> &out_luts) = 0;
+  virtual DisplayError
+  GetBufferLuts(uint64_t display, const std::vector<SnapHandle *> &buffers,
+                std::unique_ptr<std::vector<Lut3d *>> &out_luts) = 0;
 };
 
 } // namespace sdm
